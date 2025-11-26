@@ -1,11 +1,128 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="th">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ติดต่อ</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ติดต่อเรา</title>
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-orange: #FF9800;
+            --dark-orange: #F57C00;
+            --light-bg: #FFF3E0;
+            --text-color: #5D4037; /* สีน้ำตาลเข้ม เข้ากับสีส้มได้ดีกว่าสีดำสนิท */
+        }
+
+        body {
+            font-family: 'Prompt', sans-serif;
+            /* --- แก้ไข: พื้นหลังไล่เฉดสีส้มที่เข้มขึ้นเล็กน้อย --- */
+            background: linear-gradient(135deg, #ffe0b2 0%, #ffab40 100%);
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-color);
+        }
+
+        .container {
+            width: 100%;
+            max-width: 500px;
+            background: #ffffff;
+            padding: 40px;
+            border-radius: 20px;
+            /* เงาสีส้มจางๆ ให้ดูลอยเด่น */
+            box-shadow: 0 15px 35px rgba(255, 152, 0, 0.15);
+            margin: 20px;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 30px;
+            color: var(--dark-orange);
+            font-weight: 600;
+            font-size: 28px;
+        }
+
+        label {
+            font-weight: 500;
+            margin-top: 15px;
+            display: block;
+            font-size: 14px;
+            color: #000000;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 12px 15px;
+            margin-top: 8px;
+            border-radius: 10px;
+            border: 2px solid #f0f0f0;
+            font-size: 16px;
+            font-family: 'Prompt', sans-serif;
+            transition: all 0.3s ease;
+            box-sizing: border-box; /* ป้องกันกล่องล้น */
+            background-color: #fafafa;
+        }
+
+        /* Effect ตอนคลิกพิมพ์ */
+        input:focus, textarea:focus {
+            border-color: var(--primary-orange);
+            background-color: #f8f8f8;
+            outline: none;
+            box-shadow: 0 0 0 4px rgba(255, 152, 0, 0.1);
+        }
+
+        input::placeholder, textarea::placeholder {
+            color: #000000;
+            font-weight: 300;
+        }
+
+        button {
+            width: 100%;
+            margin-top: 30px;
+            padding: 14px;
+            /* ปุ่มไล่สีส้ม */
+            background: linear-gradient(to right, var(--primary-orange), var(--dark-orange));
+            border: none;
+            color: white;
+            font-size: 18px;
+            font-weight: 600;
+            border-radius: 50px; /* ปุ่มมนกลม */
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(245, 124, 0, 0.3);
+        }
+
+        button:hover {
+            transform: translateY(-2px); /* ลอยขึ้นนิดนึง */
+            box-shadow: 0 8px 20px rgba(245, 124, 0, 0.4);
+        }
+
+        button:active {
+            transform: translateY(0);
+        }
+    </style>
 </head>
 <body>
-    
+
+    <div class="container">
+        <h2>ติดต่อเรา</h2>
+        <form>
+            <label>ชื่อของคุณ</label>
+            <input type="text" placeholder="กรอกชื่อ-นามสกุล" required />
+
+            <label>อีเมล</label>
+            <input type="email" placeholder="example@mail.com" required />
+
+            <label>ข้อความ</label>
+            <textarea rows="5" placeholder="พิมพ์ข้อความที่ต้องการติดต่อ..." required></textarea>
+
+            <button type="submit">ส่งข้อความ</button>
+        </form>
+    </div>
+
 </body>
 </html>
